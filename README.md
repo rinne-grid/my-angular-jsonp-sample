@@ -7,7 +7,12 @@ AngularのJSONPサンプル。
 
 ## スクリーンショット
 
+* 初期ページ
+
 ![初期ページ](http://rinsymbol.sakura.ne.jp/github_images/my-angular-jsonp-sample-01.png)
+
+
+* エントリ取得
 
 ![エントリ取得](http://rinsymbol.sakura.ne.jp/github_images/my-angular-jsonp-sample-02.png)
 

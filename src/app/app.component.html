@@ -1,0 +1,77 @@
+<mat-toolbar color="primary" class="nav-bar">
+  <a mat-button [matMenuTriggerFor]="menu">
+    <span class="mat-button-wrapper">JSONP Test</span>
+  </a>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Settings</button>
+    <button mat-menu-item>Help</button>
+  </mat-menu>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="bookmark-header">
+      <a href="http://developer.hatena.ne.jp/ja/documents/bookmark/apis/getinfo" target="_blank">はてなブックマークエントリー情報取得API</a>を使って、対象URLのブックマーク情報を取得します。
+    </mat-toolbar>
+
+    <form class="bookmark-target-url">
+      <mat-form-field class="bookmark-target-url-input-full">
+        <mat-label>URLを入力
+        </mat-label>
+        <input matInput name="targetUrl" [(ngModel)]="targetUrl">
+      </mat-form-field>
+
+
+    </form>
+    <div class="get-bookmark-button">
+      <button mat-raised-button name="getBookmarks" color="primary" (click)="getBookmark()">取得</button>
+    </div>
+    <div class="bookmark-loading-spinner">
+      <mat-progress-spinner [mode]="spinnerMode" *ngIf="loading">
+      </mat-progress-spinner>
+    </div>
+
+    <div *ngIf="targetEntry">
+        <a href="{{targetEntry.url}}" target="_blank">{{targetEntry.title}}</a> - <span class="bookmark-user-notify">{{targetEntry.count}} USERS</span>
+      <mat-toolbar class="bookmark-section">
+        <span>ブックマークエントリー</span>
+      </mat-toolbar>
+      
+
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let bookmark of targetEntry.bookmarks">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{bookmark.timestamp}}
+            </mat-panel-title>
+            <mat-panel-description>
+              {{bookmark.user}} - ブコメ：{{bookmark.comment}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          登録タグ：
+          <div *ngFor="let tag of bookmark.tags">
+            {{tag}}
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <br>
+      <mat-toolbar class="bookmark-section">
+        <span>関連記事</span>
+      </mat-toolbar>
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let relate of targetEntry.related">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{relate.title}}
+            </mat-panel-title>
+            <mat-panel-description>
+                <span class="bookmark-user-notify">{{relate.count}} USERS</span>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <a href="{{relate.entry_url}}" target="_blank">{{relate.title}}</a>
+          
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

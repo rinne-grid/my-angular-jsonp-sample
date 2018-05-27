@@ -1,0 +1,120 @@
+html {
+    height: 100%;
+}
+body {
+    font-family: Roboto,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    height: 100%;
+}
+
+h3 {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 32px;
+    margin: 40px 0 20px;
+    padding-bottom: 3px;
+}
+
+.mat-drawer-content {
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.mat-expansion-panel-header-description {
+    flex-grow: 0;
+    text-align: left;
+}
+
+.mat-expansion-panel-header-title {
+    flex-grow: 0;
+}
+
+/* .my-navbar {
+    background: #3f51b5;
+    display: flex;
+    color: #fff;
+    padding: 8px 16px;
+} */
+
+.nav-bar {
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.bookmark-header {
+    width: 100%;
+    margin-top: 64px;
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.bookmark-section {
+    margin-top: 30px;
+    padding-left: 20px;
+}
+
+
+/* @media screen and (min-width: 499px) {
+    .bookmark-header {
+        margin-top: 56px;
+    }
+} */
+
+.bookmark-header a {
+    color: #ccc;
+}
+
+.bookmark-target-url {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bookmark-target-url-input-full {
+    min-width: 100px;
+    max-width: 850px;
+    width: 100%;
+
+}
+@media screen and (max-width: 600px) {
+    .bookmark-target-url-input-full {
+        min-width: 50px;
+        max-width: 300px;
+        width: 100%;
+        font-size: 0.6em;
+    }
+}
+
+.get-bookmark-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bookmark-loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bookmark-user-notify {
+    text-decoration:underline; 
+    font-weight: bold; 
+    font-size: 0.6rem;
+    background-color: rgb(255,203,203); 
+    color: rgb(255, 8, 8);
+    height: 16px;
+}
+
+
+.mat-expansion-panel-header-description .bookmark-user-notify {
+    margin-top: 4px;
+}
